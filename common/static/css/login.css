@@ -1,0 +1,312 @@
+#container {
+  position: relative;
+  width: 100%;
+  min-width: 980px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.login #container {
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(255, 255, 255);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: rgb(234, 234, 234);
+  border-right-color: rgb(234, 234, 234);
+  border-bottom-color: rgb(234, 234, 234);
+  border-left-color: rgb(234, 234, 234);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 28em;
+  min-width: 300px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-bottom: 100px;
+  margin-left: auto;
+}
+#header {
+  width: auto;
+  height: 40px;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(65, 118, 144);
+  line-height: 40px;
+  color: rgb(255, 255, 204);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.login #header {
+  height: auto;
+  padding-top: 5px;
+  padding-right: 16px;
+  padding-bottom: 5px;
+  padding-left: 16px;
+}
+#branding {
+  float: left;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+h1 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgb(102, 102, 102);
+}
+#branding h1 {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 300;
+  font-size: 24px;
+  color: rgb(245, 221, 93);
+}
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+  color: rgb(245, 221, 93);
+}
+.login #header h1 {
+  font-size: 18px;
+}
+a:focus {
+  text-decoration-line: underline;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+#branding a:hover {
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+.login #header h1 a {
+  color: rgb(255, 255, 255);
+}
+#content {
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+}
+.login #content {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+#content-main {
+  float: left;
+  width: 100%;
+}
+.login #content-main {
+  width: 100%;
+}
+form {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+input, textarea, select, .form-row p, form .button {
+  margin-top: 2px;
+  margin-right: 0px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  padding-top: 2px;
+  padding-right: 3px;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  vertical-align: middle;
+  font-family: Roboto, "Lucida Grande", Verdana, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+}
+.login .form-row {
+  padding-top: 4px;
+  padding-right: 0px;
+  padding-bottom: 4px;
+  padding-left: 0px;
+  float: left;
+  width: 100%;
+  border-bottom-width: initial;
+  border-bottom-style: none;
+  border-bottom-color: initial;
+}
+.login .form-row label {
+  padding-right: 0.5em;
+  line-height: 2em;
+  font-size: 1em;
+  clear: both;
+  color: rgb(51, 51, 51);
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="number"], textarea, select, .vTextField {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: rgb(204, 204, 204);
+  border-right-color: rgb(204, 204, 204);
+  border-bottom-color: rgb(204, 204, 204);
+  border-left-color: rgb(204, 204, 204);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding-top: 5px;
+  padding-right: 6px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  margin-top: 0px;
+}
+.login .form-row #id_username, .login .form-row #id_password {
+  clear: both;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.login .submit-row {
+  clear: both;
+  padding-top: 1em;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 9.4em;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  border-top-width: initial;
+  border-right-width: initial;
+  border-bottom-width: initial;
+  border-left-width: initial;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-image: none;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  text-align: left;
+}
+.button, input[type="submit"], input[type="button"], .submit-row input, a.button {
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(121, 174, 200);
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-top-width: initial;
+  border-right-width: initial;
+  border-bottom-width: initial;
+  border-left-width: initial;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.clear {
+  clear: both;
+}
+#footer {
+  clear: both;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}

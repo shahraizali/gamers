@@ -1,0 +1,456 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block container %}
+    <!--NAVIGATION-->
+
+    <div id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+{#                <a href="" class="navbar-brand">Magi Campus</a>#}
+                <img src="{% static "images/logo.png" %}" class="navbar-brand" alt="">
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#header" class="internal">Home</a></li>
+                    <li><a href="#about_us" class="internal">About Us</a></li>
+                    <li><a href="#examples" class="internal">Examples</a></li>
+                    <li><a href="{% url "subscribe" %}#">Subscribe</a></li>
+                    {#                <li><a href="#client">clients</a></li>#}
+                    <li><a href="#contact" class="internal">contact</a></li>
+                    {% if request.user.id %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ request.user.first_name }} <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="{% url "logout" %}">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url "login" %}">Login</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- End Navigation ---->
+    <!-- Message -->
+
+    {% if error %}
+        <div class="alert alert-danger alert-dismissable messages">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error !</strong> Sorry Your Email Could not be forward to Monprof.
+        </div>
+    {% elif email_sent %}
+        <div class="alert alert-success alert-dismissable messages">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Thank You!</strong> Your Email Has been Successfully Delivered.
+        </div>
+    {% endif %}
+
+    <!--End Message-->
+
+
+    <!--- Header ---->
+
+    <div id="header" class="">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="position:relative;z-index:1;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators" style="z-index:1 !important">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+{#                <li data-target="#myCarousel" data-slide-to="2" class=""></li>#}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="{% static "images/carousal/c1.jpg" %}" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="{% static "images/carousal/c2.jpg" %}" alt="Chicago" style="width:100%;">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!---- End Header ---->
+
+    <!--- About Us ---->
+
+    <div id="about_us" class="services">
+        <div class="container">
+            <h2 class="wow fadeInUp">About Us</h2>
+            <p>
+                At MagiCampus, we believe that education should be free and accessible to everyone. Learning math can be
+                a
+                persistent and joyful journey with fun games and a personal companion. We strive to provide a fun and
+                interactive math program compatible with the US Common Core State Standard. Our fun games and sheep
+                provide
+                children with a platform to learn math in a motivating way.
+            </p>
+            <div class="container">
+
+
+                <!-- about us description area  -->
+                <div class="row about-us-description-wraper">
+
+                    <div class="col-md-12 col-sm-12 about-us-description-image regular-margin-sm pad-md-right-5">
+                        <video src="{% static "video/MagiCampus.mp4" %}" type="video/mp4" width="100%"
+                               controls=""></video>
+                    </div>
+
+                    {#                    <div class="col-md-12 col-sm-12 about-us-description regular-margin-sm">#}
+                    {#                        <div class="about-us-description-heading">#}
+                    {#                            <h3>About us</h3>#}
+                    {#                        </div>#}
+                    {##}
+                    {#                        <div class="about-us-description-content">#}
+                    {#                          #}
+                    {#                        </div>#}
+                    {#                    </div>#}
+
+                </div>
+                <!-- about us description area end -->
+
+
+            </div>
+        </div>
+    </div>
+
+    <!---- End About Us ---->
+
+    <!----- examples ------>
+
+    <div id="examples" class="pricing">
+        <div class="container">
+            <h2 class="wow fadeInUp">Examples</h2>
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f1.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Learning Math is FUN!</h4>
+                                    <div class="card-text">
+                                        Our well-designed games help motivate your kids to learn math.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f2.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Logical Thinking Skills and more</h4>
+                                    <div class="card-text">
+                                        In our Smart Thinking Program, learn logical thinking skills and reasoning!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f3.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Assign Your Own Curriculum</h4>
+                                    <div class="card-text">
+                                        Parents can create customized curriculum for your kids in our Smart Thinking
+                                        Program!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f4.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Check Real-Time Report</h4>
+                                    <div class="card-text">
+                                        Parents receive customized feedback about their child's learning progress.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mb-5">
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f5.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Play with your Sheep!</h4>
+                                    <div class="card-text">
+                                        Kids will stay entertained with our unique PET system throughout their study.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f5.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">More Challenging Games </h4>
+                                    <div class="card-text">
+                                        Kids can practice advanced math questions and earn more rewards!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                            <div class="card card-inverse card-info">
+                                <img class="card-img-top" src="{% static "images/f6.png" %}">
+                                <div class="card-block">
+                                    <h4 class="card-title">Collect Exclusive Items</h4>
+                                    <div class="card-text">
+                                        Be super popular by sharing your earned collections with your friends.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- End examples ---->
+
+
+    <div id="" class="team">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 porfolio-heading-wraper">
+                            <div class="portfolio-heading">
+                                <h2>Examples</h2>
+                            </div>
+                            <hr class="heading-bottom-border">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-wiget-wraper">
+                        <div class="portfolio-image-wraper">
+                            <img class="img-responsive" src="{% static "images/1.png" %}" alt="">
+                            <div class="portfolio-hover-overlay">
+                                <div class="clearfix overlay-content-container">
+                                    <div class="overlay-image-content">
+                                        <a class="fancybox" rel="group" href="{% static "images/1.png" %}"><img
+                                                src="{% static "images/plus.png" %}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="portfolio-content-wraper display-table-fixed">
+                                <div class="col-sm-9 display-table-cell-fixed">
+                                </div>
+                                <div class="col-sm-3 display-table-cell-fixed gallery-content-container">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-wiget-wraper">
+                        <div class="portfolio-image-wraper">
+                            <img class="img-responsive" src="{% static "images/2.png" %}" alt="">
+                            <div class="portfolio-hover-overlay">
+                                <div class="clearfix overlay-content-container">
+                                    <div class="overlay-image-content">
+                                        <a class="fancybox" rel="group" href="{% static "images/2.png" %}"><img
+                                                src="{% static "images/plus.png" %}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="portfolio-content-wraper display-table-fixed">
+                                <div class="col-sm-9 display-table-cell-fixed">
+                                </div>
+                                <div class="col-sm-3 display-table-cell-fixed gallery-content-container">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 portfolio-wiget-wraper">
+                        <div class="portfolio-image-wraper">
+                            <img class="img-responsive" src="{% static "images/3.png" %}" alt="">
+                            <div class="portfolio-hover-overlay">
+                                <div class="clearfix overlay-content-container">
+                                    <div class="overlay-image-content">
+                                        <a class="fancybox" rel="group" href="{% static "images/3.png" %}"><img
+                                                src="{% static "images/plus.png" %}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="portfolio-content-wraper display-table-fixed">
+                                <div class="col-sm-9 display-table-cell-fixed">
+                                </div>
+                                <div class="col-sm-3 display-table-cell-fixed gallery-content-container">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- End subscribe ---->
+
+
+    <!--- Clients ---->
+
+    {#<div id="client" class="clients">#}
+    {#    <div class="container">#}
+    {#        <div class="row">#}
+    {#            <h2 class="wow fadeInUp">Trusted by</h2>#}
+    {#            <p class="wow fadeInUp" data-wow-delay="0.4">Lorem Ipsum passages, and more recently with desktop publishing#}
+    {#                software</p>#}
+    {#            <div class="col-lg-3 col-md-3 wow fadeInLeft" data-wow-delay="2s">#}
+    {#                <li><img src="{% static 'images/clients/client1.png' %}" alt=""></li>#}
+    {#            </div>#}
+    {#            <div class="col-lg-3 col-md-3 wow fadeInLeft" data-wow-delay="1.6s">#}
+    {#                <li><img src="{% static 'images/clients/client2.png' %}" alt=""></li>#}
+    {#            </div>#}
+    {#            <div class="col-lg-3 col-md-3 wow fadeInLeft" data-wow-delay="1.2s">#}
+    {#                <li><img src="{% static 'images/clients/client3.png' %}" alt=""></li>#}
+    {#            </div>#}
+    {#            <div class="col-lg-3 col-md-3 wow fadeInLeft" data-wow-delay="0.8s">#}
+    {#                <li><img src="{% static 'images/clients/client4.png' %}" alt=""></li>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+    {#</div>#}
+    <section id="client" class="view-more-section">
+        <div class="container">
+            <div class=" text-center" style="margin-bottom: 15px">
+                <h3 class="viewmore-heading"><h3>Join Us <Now></Now></h3> <span class="word-separetor"><a
+                        href="{% url "subscribe" %}"
+                        class="btn btn-default view-more-btn">Subscribe</a></span><span class="word-separetor"><a
+                        href="{% url "donate" %}" class="btn btn-default view-more-btn">Donate</a></span></h3>
+            </div>
+        </div>
+    </section>
+
+    <!---- End Clients ----->
+
+
+    <!--- Contact ------>
+
+
+    <!--<div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <h2 class="wow fadeInUp">Contact</h2>
+                <p class="wow fadeInUp" data-wow-delay="0.4">Leave us your message </p>
+                <div class="col-lg-6 col-md-6">
+                    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="0.8s">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" aria-describedby="sizing-addon1" placeholder="Full Name">
+                    </div>
+                    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="1.2s">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" aria-describedby="sizing-addon1" placeholder="Email Address">
+                    </div>
+                    <div class="input-group input-group-lg wow fadeInUp" data-wow-delay="1.6s">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" aria-describedby="sizing-addon1" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="input-group wow fadeInUp" data-wow-delay="2s">
+                        <textarea name="" id="" cols="80" rows="6" class="form-control"></textarea>
+                    </div>
+                    <button class="btn btn-lg wow fadeInUp" data-wow-delay="2.4s">Submit Your Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     -->
+    <!---- End Contact ----->
+
+
+    <!---- Footer ---->
+
+    {% include 'contact_Us.html' %}
+
+    <div id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="wow fadeInUp">Contact us</h4>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> Kyiv</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> gamers@gmail.com</p>
+
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +92 213 221 12 10</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +38 063 815 83 95 </p>
+                    <p><i>© 2018 Gamers, knowledge sharing</p></i>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h4>Never stop learnig</h4>
+                    <p><i class="fa fa-square-o" aria-hidden="true"></i> FIND</p>
+                    <p><i class="fa fa-square-o" aria-hidden="true"></i> RESERVE</p>
+                    <p><i class="fa fa-square-o" aria-hidden="true"></i> QUITE FREELY</p>
+                </div>
+
+
+                <div class="col-lg-4 col-md-4">
+                    <h4>Stay in touch</h4>
+                    <i class="social fa fa-facebook" aria-hidden="true"></i>
+                    <!--<i class="social fa fa-twitter" aria-hidden="true"></i>
+                   <i class="social fa fa-linkedin" aria-hidden="true"></i>
+                   <i class="social fa fa-pinterest" aria-hidden="true"></i>
+                   <i class="social fa fa-youtube" aria-hidden="true"></i>
+                   <i class="social fa fa-github" aria-hidden="true"></i><br>
+                   <input type="email" placeholder="Subscribe For Updates"><button class="btn btn-success">Subscribe</button>
+                -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

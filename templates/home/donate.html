@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    Donate
+{% endblock %}
+
+{% block style %}
+    <style>
+        #footer {
+            background-color: #eaeaea;
+            padding: 30px 0px;
+        }
+    </style>
+{% endblock %}
+
+{% block container %}
+    <!--NAVIGATION-->
+
+    <div id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                {#            <a href="" class="navbar-brand">Magi Campus</a>#}
+                <img src="{% static "images/logo.png" %}" class="navbar-brand" alt="">
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url "index" %}#header">Home</a></li>
+                    <li><a href="{% url "index" %}#about_us">About Us</a></li>
+                    <li><a href="{% url "index" %}#examples">Examples</a></li>
+                    <li><a href="{% url "subscribe" %}">Subscribe</a></li>
+                    {#                <li><a href="#client">clients</a></li>#}
+                    <li><a href="{% url "index" %}#contact">contact</a></li>
+                    {% if request.user.id %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ request.user.first_name }} <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="{% url "logout" %}">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url "login" %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- End Navigation ---->
+
+    <div class="container">
+        <div class="row about-us-description-wraper">
+            <div class="col-md-12 col-sm-12 about-us-description regular-margin-sm">
+                <div class="about-us-description-heading" style="text-align: left;">
+                    <h3>HELP US MAINTAIN THIS WEBSITE!</h3>
+                </div>
+
+                <div class="about-us-description-content" style="text-align: left;">
+                    <p>At MagiCampus, we believe that education should be free and accessible to everyone. Learning math
+                        can be a persistent and joyful journey with fun games and a personal companion. We strive to
+                        provide a fun and interactive math program compatible with the US Common Core State Standard.
+                        Our fun games and sheep provide children with a platform to learn math in a motivating way.
+                    </p>
+                    <p><b>Subscription charges will be $99.9</b></p>
+                </div>
+                <br>
+
+                <div class="about-us-description-content" style="text-align: left;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="L9GQWZN3ZDRYL">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                               border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                             height="1">
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+
+            <div class="col-md-12 col-sm-12 about-us-description-image regular-margin-sm pad-md-right-5">
+                <video src="{% static 'video/MagiCampus.mp4' %}" type="video/mp4" width="100%" controls=""
+                       __idm_id__="682373121"></video>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-wraper display-table">
+                    <div class="col-md-6 col-sm-6 footer-left display-table-cell">
+                        <div class="copyright-warning">Copyright 2017, magicampus.com. All Rights Reserved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
