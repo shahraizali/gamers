@@ -29,7 +29,7 @@ DATABASES = {
         'NAME': 'magicampus',
         'USER': 'shahr',
         'PASSWORD': 'Admin123',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'HOST': '148.72.232.39',   # Or an IP Address that your DB is hosted on
         'PORT': '',
     }
 }
